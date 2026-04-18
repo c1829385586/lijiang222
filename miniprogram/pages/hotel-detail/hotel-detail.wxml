@@ -83,10 +83,10 @@
     </view>
     <!-- 评分分布 -->
     <view class="review-dist" wx:if="{{reviewStats.total > 0}}">
-      <view class="dist-item" wx:for="{{[5,4,3,2,1]}}" wx:key="*this">
-        <text class="dist-star">{{item}}星</text>
-        <view class="dist-bar"><view class="dist-fill" style="width:{{reviewStats.ratingStats[item] / reviewStats.total * 100}}%"></view></view>
-        <text class="dist-count">{{reviewStats.ratingStats[item] || 0}}</text>
+      <view class="dist-item" wx:for="{{distList}}" wx:key="star">
+        <text class="dist-star">{{item.star}}星</text>
+        <view class="dist-bar"><view class="dist-fill" style="width:{{item.percent}}%"></view></view>
+        <text class="dist-count">{{item.count}}</text>
       </view>
     </view>
     <!-- 最新评价 -->
@@ -97,7 +97,7 @@
             <image class="review-avatar" src="{{item.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"/>
             <text class="review-name">{{item.nickName || '匿名用户'}}</text>
           </view>
-          <text class="review-stars">{{'⭐'.repeat(item.rating)}}</text>
+          <text class="review-stars">{{item.stars}}</text>
         </view>
         <text class="review-content">{{item.content}}</text>
         <view class="review-reply" wx:if="{{item.reply}}">
@@ -107,7 +107,7 @@
         <text class="review-time">{{item.createdAt}}</text>
       </view>
     </view>
-    <view class="review-empty" wx:if="{{!reviews.length && !reviewLoading}}">
+    <view class="review-empty" wx:if="{{reviews.length === 0 && reviewLoading === false}}">
       <text>暂无评价，成为第一个评价的人吧</text>
     </view>
   </view>

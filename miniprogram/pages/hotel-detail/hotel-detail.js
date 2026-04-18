@@ -17,6 +17,7 @@ Page({
     reviews: [],
     reviewStats: { total: 0, avgRating: 0, ratingStats: {5:0,4:0,3:0,2:0,1:0} },
     reviewLoading: false,
+    distList: [],
     defaultServices: [
       { icon: '🅿️', name: '免费停车' },
       { icon: '📶', name: '免费WiFi' },
@@ -79,13 +80,27 @@ Page({
         data: { action: 'list', storeId, page: 1 }
       })
       if (result.code === 0) {
+        const starStr = '⭐⭐⭐⭐⭐'
+        const reviews = result.data.slice(0, 3).map(r => ({
+          ...r,
+          stars: starStr.substring(0, r.rating)
+        }))
+        // 评分分布列表
+        const rs = result.ratingStats || {}
+        const total = result.total || 0
+        const distList = [5,4,3,2,1].map(s => ({
+          star: s,
+          count: rs[s] || 0,
+          percent: total > 0 ? ((rs[s] || 0) / total * 100) : 0
+        }))
         this.setData({
-          reviews: result.data.slice(0, 3), // 只展示最新3条
+          reviews,
           reviewStats: {
             total: result.total,
             avgRating: result.avgRating,
-            ratingStats: result.ratingStats
-          }
+            ratingStats: rs
+          },
+          distList
         })
       }
     } catch (e) {
