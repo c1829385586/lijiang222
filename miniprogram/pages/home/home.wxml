@@ -13,8 +13,34 @@
     </view>
   </view>
 
+  <!-- 🏨 快速预订卡片（亚朵风格） -->
+  <view class="quick-book-card">
+    <view class="quick-book-title">在丽江，遇见慢生活</view>
+    <view class="quick-book-row">
+      <view class="quick-book-item" bindtap="onQuickBookDate" data-type="checkIn">
+        <text class="qb-label">入住</text>
+        <text class="qb-value">{{checkInDateText}}</text>
+        <text class="qb-day">{{checkInDay}}</text>
+      </view>
+      <view class="qb-nights">
+        <text class="qb-nights-num">{{nights}}</text>
+        <text class="qb-nights-text">晚</text>
+      </view>
+      <view class="quick-book-item" bindtap="onQuickBookDate" data-type="checkOut">
+        <text class="qb-label">离店</text>
+        <text class="qb-value">{{checkOutDateText}}</text>
+        <text class="qb-day">{{checkOutDay}}</text>
+      </view>
+    </view>
+    <view class="quick-book-search" bindtap="onQuickSearch">
+      <text class="qb-search-icon">🔍</text>
+      <text class="qb-search-text">查找酒店民宿</text>
+      <view class="qb-search-btn">搜索</view>
+    </view>
+  </view>
+
   <!-- Banner轮播 -->
-  <swiper class="banner-swiper" autoplay circular indicator-dots>
+  <swiper class="banner-swiper" autoplay circular indicator-dots wx:if="{{banners.length}}">
     <swiper-item wx:for="{{banners}}" wx:key="_id">
       <image class="banner-img" src="{{item.imageUrl}}" mode="aspectFill" bindtap="onBannerTap" data-url="{{item.linkUrl}}"/>
     </swiper-item>
@@ -37,6 +63,7 @@
     <scroll-view scroll-x class="scroll-h">
       <view class="hotel-card" wx:for="{{recommendHotels}}" wx:key="_id" bindtap="onHotelTap" data-id="{{item._id}}">
         <image class="hotel-img" src="{{item.coverImage}}" mode="aspectFill"/>
+        <view class="hotel-score-float" wx:if="{{item.score}}">{{item.score}}分</view>
         <view class="hotel-info">
           <text class="hotel-name ellipsis">{{item.name}}</text>
           <view class="hotel-tags">
@@ -44,7 +71,7 @@
           </view>
           <view class="flex-between">
             <text class="price">{{item.minPrice}}</text>
-            <text class="hotel-score">{{item.score}}分</text>
+            <text class="hotel-distance">{{item.distance || ''}}</text>
           </view>
         </view>
       </view>

@@ -18,12 +18,59 @@ Page({
     recommendFoods: [],
     recommendProducts: [],
     locationText: '定位中...',
-    searchKeyword: ''
+    searchKeyword: '',
+    // 快速预订
+    checkInDate: '',
+    checkOutDate: '',
+    checkInDateText: '',
+    checkOutDateText: '',
+    checkInDay: '',
+    checkOutDay: '',
+    nights: 1
   },
 
   onLoad() {
+    this.initDates()
     this.getLocationText()
     this.loadData()
+  },
+
+  // 快速预订 - 初始化日期
+  initDates() {
+    const dayNames = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+    const today = new Date()
+    const tomorrow = new Date(today.getTime() + 86400000)
+    const fmt = (d) => `${d.getMonth() + 1}月${d.getDate()}日`
+    this.setData({
+      checkInDate: this.fmtDate(today),
+      checkOutDate: this.fmtDate(tomorrow),
+      checkInDateText: fmt(today),
+      checkOutDateText: fmt(tomorrow),
+      checkInDay: dayNames[today.getDay()],
+      checkOutDay: dayNames[tomorrow.getDay()],
+      nights: 1
+    })
+  },
+
+  fmtDate(d) {
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+  },
+
+  // 快速预订 - 选择日期
+  onQuickBookDate(e) {
+    const type = e.currentTarget.dataset.type
+    const isCheckIn = type === 'checkIn'
+    const minDate = isCheckIn ? this.fmtDate(new Date()) : this.data.checkInDate
+    wx.navigateTo({
+      url: `/pages/hotel/hotel?checkIn=${this.data.checkInDate}&checkOut=${this.data.checkOutDate}`
+    })
+  },
+
+  // 快速预订 - 搜索酒店
+  onQuickSearch() {
+    wx.navigateTo({
+      url: `/pages/hotel/hotel?checkIn=${this.data.checkInDate}&checkOut=${this.data.checkOutDate}`
+    })
   },
 
   onShow() {

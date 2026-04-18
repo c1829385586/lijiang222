@@ -1,8 +1,46 @@
 .hotel-detail { padding-bottom: 120rpx; }
 .detail-swiper { height: 400rpx; }
 .detail-img { width: 100%; height: 400rpx; }
-.store-name { font-size: 36rpx; font-weight: bold; }
-.score-text { font-size: 26rpx; color: #FF9500; }
+.store-name { font-size: 36rpx; font-weight: bold; flex: 1; margin-right: 16rpx; }
+.score-badge {
+  background: linear-gradient(135deg, #FF9500, #FF6B35);
+  border-radius: 12rpx;
+  padding: 8rpx 16rpx;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.score-big {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.score-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 6rpx;
+}
+.score-star { font-size: 18rpx; }
+.score-label {
+  font-size: 16rpx;
+  color: rgba(255,255,255,0.9);
+}
+.store-price-row {
+  display: flex;
+  align-items: baseline;
+  margin-top: 12rpx;
+}
+.price-suffix {
+  font-size: 22rpx;
+  color: #999;
+  margin-left: 4rpx;
+}
+.store-review-count {
+  font-size: 22rpx;
+  color: #999;
+  margin-left: 16rpx;
+}
 .store-tags { margin: 12rpx 0; }
 .store-address { margin-top: 12rpx; font-size: 26rpx; color: #666; justify-content: space-between; }
 .address-nav { color: #FF6B35; font-size: 24rpx; }
@@ -17,6 +55,20 @@
 .room-img { width: 180rpx; height: 130rpx; border-radius: 12rpx; flex-shrink: 0; }
 .room-info { flex: 1; margin-left: 16rpx; display: flex; flex-direction: column; justify-content: space-between; }
 .room-name { font-size: 28rpx; font-weight: bold; }
+.room-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8rpx 0;
+}
+.room-tag {
+  font-size: 20rpx;
+  color: #FF6B35;
+  background: #FFF3ED;
+  padding: 2rpx 10rpx;
+  border-radius: 6rpx;
+  margin-right: 8rpx;
+  margin-bottom: 4rpx;
+}
 .room-desc { font-size: 22rpx; color: #999; }
 .room-stock { font-size: 22rpx; color: #4CD964; }
 .room-stock.sold-out { color: #999; }
@@ -28,3 +80,106 @@
 .bottom-price { display: flex; flex-direction: column; }
 .price.big { font-size: 40rpx; }
 .label { font-size: 22rpx; color: #999; }
+
+/* ===== 评价模块 ===== */
+.review-avg {
+  font-size: 26rpx;
+  color: #FF9500;
+  font-weight: bold;
+  margin-left: 12rpx;
+}
+.review-count {
+  font-size: 22rpx;
+  color: #999;
+  margin-left: 8rpx;
+}
+.review-more {
+  font-size: 24rpx;
+  color: #FF6B35;
+}
+.review-dist {
+  margin: 16rpx 0;
+}
+.dist-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8rpx;
+}
+.dist-star {
+  width: 60rpx;
+  font-size: 22rpx;
+  color: #666;
+  text-align: right;
+}
+.dist-bar {
+  flex: 1;
+  height: 16rpx;
+  background: #f0f0f0;
+  border-radius: 8rpx;
+  margin: 0 12rpx;
+  overflow: hidden;
+}
+.dist-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF9500, #FF6B35);
+  border-radius: 8rpx;
+  transition: width 0.3s;
+}
+.dist-count {
+  width: 40rpx;
+  font-size: 22rpx;
+  color: #999;
+}
+.review-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.review-item:last-child { border-bottom: none; }
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+.review-avatar {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  margin-right: 12rpx;
+}
+.review-name {
+  font-size: 26rpx;
+  color: #333;
+}
+.review-stars {
+  font-size: 22rpx;
+}
+.review-content {
+  font-size: 26rpx;
+  color: #333;
+  line-height: 1.6;
+  display: block;
+  margin-bottom: 8rpx;
+}
+.review-reply {
+  background: #f8f8f8;
+  border-radius: 8rpx;
+  padding: 12rpx 16rpx;
+  margin: 8rpx 0;
+  font-size: 24rpx;
+  color: #666;
+}
+.reply-label {
+  color: #FF6B35;
+  font-weight: bold;
+}
+.review-time {
+  font-size: 22rpx;
+  color: #ccc;
+}
+.review-empty {
+  text-align: center;
+  padding: 30rpx;
+  color: #ccc;
+  font-size: 24rpx;
+}

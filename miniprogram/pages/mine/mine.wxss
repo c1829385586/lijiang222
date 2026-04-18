@@ -67,6 +67,29 @@
   letter-spacing: 2rpx;
 }
 
+/* ====== 会员徽章 ====== */
+.member-badge {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 16rpx;
+  padding: 12rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  border: 1rpx solid rgba(255,255,255,0.3);
+}
+.member-level {
+  color: #FFD700;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.member-points {
+  color: rgba(255,255,255,0.8);
+  font-size: 20rpx;
+  margin-top: 4rpx;
+}
+
 /* ====== 商户入口 ====== */
 .merchant-entry {
   display: flex;

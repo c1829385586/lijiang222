@@ -13,6 +13,10 @@ Page({
     checkOutDate: '',
     nights: 1,
     totalPrice: 0,
+    // 评价
+    reviews: [],
+    reviewStats: { total: 0, avgRating: 0, ratingStats: {5:0,4:0,3:0,2:0,1:0} },
+    reviewLoading: false,
     defaultServices: [
       { icon: '🅿️', name: '免费停车' },
       { icon: '📶', name: '免费WiFi' },
@@ -43,10 +47,12 @@ Page({
   async loadStoreDetail(id) {
     wx.showLoading({ title: '加载中' })
     try {
-      const store = await db.collection('stores').doc(id).get()
-      const rooms = await db.collection('rooms').where({ storeId: id, status: 1 }).get()
-      const foods = await db.collection('stores').where({ type: 'food', status: 1 }).limit(6).get()
-      const products = await db.collection('products').where({ status: 1 }).limit(6).get()
+      const [store, rooms, foods, products] = await Promise.all([
+        db.collection('stores').doc(id).get(),
+        db.collection('rooms').where({ storeId: id, status: 1 }).get(),
+        db.collection('stores').where({ type: 'food', status: 1 }).limit(6).get(),
+        db.collection('products').where({ status: 1 }).limit(6).get()
+      ])
 
       this.setData({
         store: store.data,
@@ -54,11 +60,43 @@ Page({
         nearbyFoods: foods.data,
         nearbyProducts: products.data
       })
+
+      // 加载评价
+      this.loadReviews(id)
     } catch (e) {
       console.error(e)
       wx.showToast({ title: '加载失败', icon: 'none' })
     }
     wx.hideLoading()
+  },
+
+  // 加载评价
+  async loadReviews(storeId) {
+    this.setData({ reviewLoading: true })
+    try {
+      const { result } = await wx.cloud.callFunction({
+        name: 'review',
+        data: { action: 'list', storeId, page: 1 }
+      })
+      if (result.code === 0) {
+        this.setData({
+          reviews: result.data.slice(0, 3), // 只展示最新3条
+          reviewStats: {
+            total: result.total,
+            avgRating: result.avgRating,
+            ratingStats: result.ratingStats
+          }
+        })
+      }
+    } catch (e) {
+      console.error('加载评价失败', e)
+    }
+    this.setData({ reviewLoading: false })
+  },
+
+  // 查看全部评价
+  goReviews() {
+    wx.navigateTo({ url: `/pages/store-detail/store-detail?type=reviews&id=${this.data.storeId}` })
   },
 
   previewImage(e) {

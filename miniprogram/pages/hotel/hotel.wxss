@@ -8,10 +8,26 @@
 .hotel-card { display: flex; padding: 0 !important; overflow: hidden; }
 .hotel-img { width: 220rpx; height: 220rpx; flex-shrink: 0; }
 .hotel-info { flex: 1; padding: 16rpx 20rpx; display: flex; flex-direction: column; justify-content: space-between; }
-.hotel-name { font-size: 30rpx; font-weight: bold; }
+.hotel-name { font-size: 30rpx; font-weight: bold; flex: 1; margin-right: 12rpx; }
 .hotel-tags { margin: 8rpx 0; }
-.hotel-score { font-size: 22rpx; color: #FF9500; }
+.hotel-score-badge {
+  background: linear-gradient(135deg, #FF9500, #FF6B35);
+  color: #fff;
+  border-radius: 8rpx;
+  padding: 4rpx 12rpx;
+  display: flex;
+  align-items: baseline;
+  flex-shrink: 0;
+}
+.score-num {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.score-label {
+  font-size: 18rpx;
+  margin-left: 2rpx;
+}
 .hotel-distance { font-size: 22rpx; color: #999; }
-.hotel-addr { font-size: 22rpx; color: #999; }
+.hotel-addr { font-size: 22rpx; color: #999; margin-bottom: 4rpx; }
 .price-unit { font-size: 22rpx; }
 .loading-more { text-align: center; padding: 30rpx; color: #999; font-size: 24rpx; }

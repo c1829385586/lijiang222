@@ -12,6 +12,10 @@
         <text class="mine-name">{{userInfo.nickName || '点击登录'}}</text>
         <text class="mine-slogan">在丽江，遇见慢生活</text>
       </view>
+      <view class="member-badge" bindtap="goMember">
+        <text class="member-level">{{memberLevel}}</text>
+        <text class="member-points">{{memberPoints}}积分</text>
+      </view>
     </view>
   </view>
 
@@ -89,6 +93,15 @@
           <image class="menu-icon" src="/images/mine/cart.png" mode="aspectFit"/>
         </view>
         <text class="menu-text">购物车</text>
+      </view>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="goMyReviews">
+      <view class="menu-item-left">
+        <view class="menu-icon-wrap order">
+          <text style="font-size:36rpx">⭐</text>
+        </view>
+        <text class="menu-text">我的评价</text>
       </view>
       <text class="menu-arrow">›</text>
     </view>

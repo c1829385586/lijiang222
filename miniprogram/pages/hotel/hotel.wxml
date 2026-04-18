@@ -18,16 +18,22 @@
       <view class="hotel-info">
         <view class="flex-between">
           <text class="hotel-name">{{item.name}}</text>
-          <text class="price">{{item.minPrice}}<text class="price-unit">起</text></text>
+          <view class="hotel-score-badge" wx:if="{{item.score}}">
+            <text class="score-num">{{item.score}}</text>
+            <text class="score-label">分</text>
+          </view>
         </view>
         <view class="hotel-tags">
           <text class="tag" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this">{{tag}}</text>
         </view>
-        <view class="flex-between">
-          <text class="hotel-score">⭐ {{item.score || '4.8'}}分</text>
+        <text class="hotel-addr ellipsis">{{item.address}}</text>
+        <view class="flex-between" style="margin-top:8rpx">
+          <view class="flex">
+            <text class="price">{{item.minPrice}}</text>
+            <text class="price-unit">起</text>
+          </view>
           <text class="hotel-distance">{{item.distance || ''}}</text>
         </view>
-        <text class="hotel-addr ellipsis">{{item.address}}</text>
       </view>
     </view>
   </view>
