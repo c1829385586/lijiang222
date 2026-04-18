@@ -107,7 +107,7 @@
         <text class="review-time">{{item.createdAt}}</text>
       </view>
     </view>
-    <view class="review-empty" wx:if="{{reviews.length === 0 && reviewLoading === false}}">
+    <view class="review-empty" wx:if="{{reviews.length == 0}}">
       <text>暂无评价，成为第一个评价的人吧</text>
     </view>
   </view>
