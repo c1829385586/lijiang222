@@ -3,7 +3,7 @@
   <view class="cart-list" wx:if="{{cartItems.length}}">
     <view class="cart-item card" wx:for="{{cartItems}}" wx:key="_id">
       <view class="flex">
-        <checkbox checked="{{item.checked}}" bindchange="toggleItem" data-index="{{index}}" color="#FF6B35"/>
+        <checkbox checked="{{item.checked}}" bindchange="toggleItem" data-index="{{index}}" color="#C8A96E"/>
         <image class="cart-img" src="{{item.coverImage}}" mode="aspectFill"/>
         <view class="cart-info">
           <text class="cart-name ellipsis">{{item.name}}</text>
@@ -28,7 +28,7 @@
 
   <view class="cart-bottom" wx:if="{{cartItems.length}}">
     <view class="flex">
-      <checkbox checked="{{allChecked}}" bindchange="toggleAll" color="#FF6B35"/>
+      <checkbox checked="{{allChecked}}" bindchange="toggleAll" color="#C8A96E"/>
       <text>全选</text>
     </view>
     <view class="flex">

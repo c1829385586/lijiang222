@@ -43,7 +43,7 @@
     <view class="form-item">
       <view class="flex-between">
         <text class="form-label">可送到房间</text>
-        <switch checked="{{form.canDeliverToRoom}}" bindchange="toggleDeliver" color="#FF6B35"/>
+        <switch checked="{{form.canDeliverToRoom}}" bindchange="toggleDeliver" color="#C8A96E"/>
       </view>
       <text class="form-hint">开启后，住客可在酒店详情页直接选购</text>
     </view>

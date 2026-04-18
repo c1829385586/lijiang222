@@ -14,7 +14,7 @@
 .detail-img { width: 180rpx; height: 180rpx; border-radius: 16rpx; flex-shrink: 0; }
 .detail-info { flex: 1; margin-left: 20rpx; display: flex; flex-direction: column; justify-content: center; }
 .detail-name { font-size: 32rpx; font-weight: bold; }
-.detail-type { font-size: 22rpx; color: #E8885A; background: #FFF3ED; padding: 2rpx 10rpx; border-radius: 6rpx; margin-top: 8rpx; display: inline-block; width: fit-content; }
+.detail-type { font-size: 22rpx; color: #E8885A; background: rgba(200,169,110,0.12); padding: 2rpx 10rpx; border-radius: 6rpx; margin-top: 8rpx; display: inline-block; width: fit-content; }
 .detail-addr { font-size: 22rpx; color: #999; margin-top: 8rpx; }
 .detail-btn { background: #E8885A; color: #fff; font-size: 24rpx; padding: 10rpx 24rpx; border-radius: 24rpx; }
 

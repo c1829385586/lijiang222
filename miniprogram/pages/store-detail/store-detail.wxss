@@ -4,7 +4,7 @@
 .store-name { font-size: 36rpx; font-weight: bold; display: block; }
 .product-original { font-size: 24rpx; color: #999; text-decoration: line-through; margin-left: 12rpx; }
 .product-sales { font-size: 24rpx; color: #999; }
-.product-deliver { margin-top: 16rpx; font-size: 24rpx; color: #FF6B35; background: #FFF3ED; padding: 12rpx 16rpx; border-radius: 12rpx; }
+.product-deliver { margin-top: 16rpx; font-size: 24rpx; color: var(--accent-dark); background: rgba(200,169,110,0.12); padding: 12rpx 16rpx; border-radius: 12rpx; }
 .store-desc { font-size: 26rpx; color: #666; line-height: 1.8; }
 .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 16rpx 24rpx; padding-bottom: calc(16rpx + env(safe-area-inset-bottom)); box-shadow: 0 -2rpx 12rpx rgba(0,0,0,0.06); display: flex; }
 .buy-qty { display: flex; align-items: center; }

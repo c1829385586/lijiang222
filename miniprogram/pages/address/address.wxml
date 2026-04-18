@@ -10,7 +10,7 @@
       <text class="addr-detail">{{item.province}}{{item.city}}{{item.district}}{{item.detail}}</text>
       <view class="addr-actions flex-between">
         <view class="flex" bindtap="setDefault" data-id="{{item._id}}">
-          <radio checked="{{item.isDefault}}" color="#FF6B35"/>
+          <radio checked="{{item.isDefault}}" color="#C8A96E"/>
           <text>设为默认</text>
         </view>
         <view class="flex">

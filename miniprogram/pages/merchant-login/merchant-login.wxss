@@ -1,5 +1,5 @@
 .login-page { background: #f5f5f5; min-height: 100vh; padding-bottom: 40rpx; }
-.login-header { background: linear-gradient(135deg, #2C3E50, #34495E); padding: 60rpx 30rpx 40rpx; text-align: center; }
+.login-header { background: linear-gradient(135deg, var(--primary), #34495E); padding: 60rpx 30rpx 40rpx; text-align: center; }
 .login-title { color: #fff; font-size: 40rpx; font-weight: bold; display: block; }
 .login-subtitle { color: rgba(255,255,255,0.7); font-size: 26rpx; }
 .form-card { margin: -20rpx 20rpx 0; background: #fff; border-radius: 16rpx; padding: 30rpx; position: relative; z-index: 1; }

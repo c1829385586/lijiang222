@@ -31,15 +31,15 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FF6B35",
-    "navigationBarTitleText": "本地生活",
+    "navigationBarBackgroundColor": "#4A3728",
+    "navigationBarTitleText": "丽江 · 慢生活",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "#999",
-    "selectedColor": "#FF6B35",
-    "backgroundColor": "#fff",
-    "borderStyle": "black",
+    "color": "#B5ADA3",
+    "selectedColor": "#4A3728",
+    "backgroundColor": "#FFFCF7",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/home/home",

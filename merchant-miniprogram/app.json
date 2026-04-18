@@ -14,14 +14,14 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#2C3E50",
+    "navigationBarBackgroundColor": "#4A3728",
     "navigationBarTitleText": "商户中心",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "#999",
-    "selectedColor": "#2C3E50",
-    "backgroundColor": "#fff",
+    "color": "#B5ADA3",
+    "selectedColor": "#4A3728",
+    "backgroundColor": "#FFFCF7",
     "list": [
       {
         "pagePath": "pages/dashboard/dashboard",

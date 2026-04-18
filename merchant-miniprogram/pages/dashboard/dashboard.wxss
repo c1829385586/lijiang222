@@ -8,15 +8,15 @@
 }
 .subscribe-icon { font-size: 40rpx; margin-right: 16rpx; }
 .subscribe-text { flex: 1; }
-.subscribe-title { font-size: 28rpx; font-weight: bold; color: #2C3E50; display: block; }
+.subscribe-title { font-size: 28rpx; font-weight: bold; color: var(--primary); display: block; }
 .subscribe-desc { font-size: 22rpx; color: #666; }
 .subscribe-btn {
-  background: #2C3E50; color: #fff; font-size: 24rpx; padding: 10rpx 24rpx;
+  background: var(--primary); color: #fff; font-size: 24rpx; padding: 10rpx 24rpx;
   border-radius: 24rpx; flex-shrink: 0;
 }
 .subscribe-close { font-size: 28rpx; color: #999; margin-left: 16rpx; flex-shrink: 0; }
 
-.merchant-header { background: linear-gradient(135deg, #2C3E50, #34495E); padding: 30rpx; display: flex; justify-content: space-between; align-items: center; }
+.merchant-header { background: linear-gradient(135deg, var(--primary), #34495E); padding: 30rpx; display: flex; justify-content: space-between; align-items: center; }
 .merchant-name { color: #fff; font-size: 34rpx; font-weight: bold; display: block; }
 .merchant-type { color: rgba(255,255,255,0.7); font-size: 24rpx; }
 .merchant-status { padding: 6rpx 20rpx; border-radius: 20rpx; font-size: 22rpx; }
@@ -26,7 +26,7 @@
 .stats-title { font-size: 28rpx; color: #666; margin-bottom: 16rpx; }
 .stats-grid { display: flex; }
 .stats-item { flex: 1; text-align: center; }
-.stats-num { font-size: 40rpx; font-weight: bold; color: #2C3E50; display: block; }
+.stats-num { font-size: 40rpx; font-weight: bold; color: var(--primary); display: block; }
 .stats-label { font-size: 22rpx; color: #999; }
 .section { margin-top: 20rpx; padding: 0 20rpx; }
 .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16rpx; }
@@ -37,7 +37,7 @@
 .order-time { font-size: 22rpx; color: #999; }
 .order-desc { font-size: 24rpx; color: #666; margin: 8rpx 0; }
 .order-bottom { margin-top: 12rpx; }
-.btn-sm { padding: 8rpx 24rpx; border: 1rpx solid #2C3E50; border-radius: 24rpx; font-size: 24rpx; margin-left: 12rpx; color: #2C3E50; }
+.btn-sm { padding: 8rpx 24rpx; border: 1rpx solid var(--primary); border-radius: 24rpx; font-size: 24rpx; margin-left: 12rpx; color: var(--primary); }
 .btn-sm.danger { color: #FF3B30; border-color: #FF3B30; }
 .quick-actions { margin-top: 20rpx; padding: 0 20rpx; }
 .quick-title { font-size: 30rpx; font-weight: bold; margin-bottom: 16rpx; }

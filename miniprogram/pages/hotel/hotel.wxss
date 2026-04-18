@@ -1,33 +1,164 @@
-.header-bar { background: #fff; position: sticky; top: 0; z-index: 10; }
-.search-wrap { padding: 16rpx 24rpx; }
-.search-input { background: #f5f5f5; border-radius: 36rpx; padding: 0 24rpx; height: 72rpx; font-size: 28rpx; }
-.filter-bar { display: flex; padding: 0 24rpx 16rpx; border-bottom: 1rpx solid #eee; }
-.filter-item { font-size: 24rpx; color: #666; margin-right: 30rpx; padding: 8rpx 0; }
-.filter-item.active { color: #FF6B35; font-weight: bold; border-bottom: 4rpx solid #FF6B35; }
-.hotel-list { padding: 16rpx 0; }
-.hotel-card { display: flex; padding: 0 !important; overflow: hidden; }
-.hotel-img { width: 220rpx; height: 220rpx; flex-shrink: 0; }
-.hotel-info { flex: 1; padding: 16rpx 20rpx; display: flex; flex-direction: column; justify-content: space-between; }
-.hotel-name { font-size: 30rpx; font-weight: bold; flex: 1; margin-right: 12rpx; }
-.hotel-tags { margin: 8rpx 0; }
+/* ===== 页面容器 ===== */
+.hotel-page {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* ===== 顶栏 ===== */
+.header-bar {
+  background: var(--card);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2rpx 12rpx rgba(74,55,40,0.04);
+}
+
+.search-wrap {
+  padding: 20rpx 28rpx;
+}
+
+.search-input {
+  background: var(--bg);
+  border-radius: 40rpx;
+  padding: 0 28rpx;
+  height: 76rpx;
+  font-size: 28rpx;
+  border: 1rpx solid var(--border);
+}
+
+.filter-bar {
+  display: flex;
+  padding: 0 28rpx 20rpx;
+  border-bottom: 1rpx solid var(--border);
+}
+
+.filter-item {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  margin-right: 36rpx;
+  padding: 10rpx 0;
+  position: relative;
+  letter-spacing: 1rpx;
+}
+
+.filter-item.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.filter-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36rpx;
+  height: 4rpx;
+  background: var(--accent);
+  border-radius: 2rpx;
+}
+
+/* ===== 酒店列表 ===== */
+.hotel-list {
+  padding: 20rpx 0;
+}
+
+.hotel-card {
+  display: flex;
+  background: var(--card);
+  border-radius: 20rpx;
+  margin: 0 24rpx 20rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(74,55,40,0.06);
+  border: 1rpx solid rgba(200,169,110,0.08);
+}
+
+.hotel-img {
+  width: 230rpx;
+  height: 230rpx;
+  flex-shrink: 0;
+}
+
+.hotel-info {
+  flex: 1;
+  padding: 20rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  flex: 1;
+  margin-right: 12rpx;
+  color: var(--text);
+}
+
+.hotel-tags {
+  margin: 10rpx 0;
+  min-height: 36rpx;
+}
+
 .hotel-score-badge {
-  background: linear-gradient(135deg, #FF9500, #FF6B35);
-  color: #fff;
-  border-radius: 8rpx;
-  padding: 4rpx 12rpx;
+  background: linear-gradient(135deg, var(--primary), #5C4433);
+  color: var(--accent);
+  border-radius: 10rpx;
+  padding: 6rpx 14rpx;
   display: flex;
   align-items: baseline;
   flex-shrink: 0;
 }
+
 .score-num {
   font-size: 28rpx;
-  font-weight: bold;
+  font-weight: 700;
 }
+
 .score-label {
   font-size: 18rpx;
   margin-left: 2rpx;
 }
-.hotel-distance { font-size: 22rpx; color: #999; }
-.hotel-addr { font-size: 22rpx; color: #999; margin-bottom: 4rpx; }
-.price-unit { font-size: 22rpx; }
-.loading-more { text-align: center; padding: 30rpx; color: #999; font-size: 24rpx; }
+
+.hotel-distance {
+  font-size: 22rpx;
+  color: var(--text-light);
+}
+
+.hotel-addr {
+  font-size: 22rpx;
+  color: var(--text-light);
+  margin-bottom: 6rpx;
+}
+
+.price-unit {
+  font-size: 22rpx;
+  color: var(--text-light);
+}
+
+/* ===== 空状态 ===== */
+.empty {
+  text-align: center;
+  padding: 120rpx 0;
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  display: block;
+  margin-bottom: 20rpx;
+  opacity: 0.3;
+}
+
+.empty-text {
+  color: var(--text-light);
+  font-size: 28rpx;
+  letter-spacing: 2rpx;
+}
+
+.loading-more {
+  text-align: center;
+  padding: 40rpx;
+  color: var(--text-light);
+  font-size: 24rpx;
+  letter-spacing: 1rpx;
+}

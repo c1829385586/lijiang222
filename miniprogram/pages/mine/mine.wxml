@@ -10,7 +10,7 @@
       </view>
       <view class="mine-user">
         <text class="mine-name">{{userInfo.nickName || '点击登录'}}</text>
-        <text class="mine-slogan">在丽江，遇见慢生活</text>
+        <text class="mine-slogan">丽江 · 慢生活</text>
       </view>
       <view class="member-badge" bindtap="goMember">
         <text class="member-level">{{memberLevel}}</text>
@@ -127,6 +127,6 @@
 
   <!-- 底部装饰 -->
   <view class="footer-decor">
-    <text class="footer-text">— 丽江慢生活 · 本地好去处 —</text>
+    <text class="footer-text">—  丽江 · 慢生活  —</text>
   </view>
 </view>

@@ -2,10 +2,10 @@
 .detail-swiper { height: 400rpx; }
 .detail-img { width: 100%; height: 400rpx; }
 .store-name { font-size: 36rpx; font-weight: bold; display: block; }
-.score-text { font-size: 26rpx; color: #FF9500; }
+.score-text { font-size: 26rpx; color: var(--accent-dark); }
 .store-tags { margin: 16rpx 0; }
 .store-desc { font-size: 26rpx; color: #666; line-height: 1.8; }
-.address-nav { color: #FF6B35; font-size: 24rpx; }
+.address-nav { color: var(--accent-dark); font-size: 24rpx; }
 .scroll-h { white-space: nowrap; padding: 12rpx 0; }
 .nearby-card { display: inline-block; width: 200rpx; margin-right: 16rpx; }
 .nearby-img { width: 200rpx; height: 140rpx; border-radius: 12rpx; }
