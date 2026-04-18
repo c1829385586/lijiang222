@@ -1,49 +1,39 @@
 <!--pages/home/home.wxml-->
 <view class="home-page">
-  <!-- 顶部定位+搜索 -->
+  <!-- 顶部：定位+搜索 -->
   <view class="home-header">
-    <view class="header-bg"></view>
     <view class="location-bar" bindtap="onChooseLocation">
-      <text class="location-icon">📍</text>
       <text class="location-text ellipsis">{{locationText}}</text>
       <text class="location-arrow">▾</text>
     </view>
-    <view class="header-tagline">在丽江，遇见慢生活</view>
-    <view class="search-wrap">
-      <input class="search-input" placeholder="搜索美食、酒店、景点" bindinput="onSearchInput" bindconfirm="onSearch" value="{{searchKeyword}}"/>
-      <view class="search-btn" bindtap="onSearch">搜索</view>
-    </view>
   </view>
 
-  <!-- 快速预订卡片 -->
-  <view class="quick-book-card">
+  <!-- 快速预订 -->
+  <view class="quick-book">
     <view class="qb-date-row">
-      <view class="quick-book-item" bindtap="onQuickBookDate" data-type="checkIn">
-        <text class="qb-label">入住</text>
-        <text class="qb-value">{{checkInDateText}}</text>
-        <text class="qb-day">{{checkInDay}}</text>
+      <view class="qb-date-item" bindtap="onQuickBookDate" data-type="checkIn">
+        <text class="qb-date-label">入住</text>
+        <text class="qb-date-value">{{checkInDateText}}</text>
+        <text class="qb-date-day">{{checkInDay}}</text>
       </view>
-      <view class="qb-divider">
-        <view class="qb-nights-badge">
-          <text class="qb-nights-num">{{nights}}</text>
-          <text class="qb-nights-text">晚</text>
-        </view>
+      <view class="qb-nights">
+        <text class="qb-nights-text">共{{nights}}晚</text>
       </view>
-      <view class="quick-book-item" bindtap="onQuickBookDate" data-type="checkOut">
-        <text class="qb-label">离店</text>
-        <text class="qb-value">{{checkOutDateText}}</text>
-        <text class="qb-day">{{checkOutDay}}</text>
+      <view class="qb-date-item" bindtap="onQuickBookDate" data-type="checkOut">
+        <text class="qb-date-label">离店</text>
+        <text class="qb-date-value">{{checkOutDateText}}</text>
+        <text class="qb-date-day">{{checkOutDay}}</text>
       </view>
     </view>
-    <view class="quick-book-search" bindtap="onQuickSearch">
-      <text class="qb-search-text">查找酒店民宿</text>
-      <view class="qb-search-btn">立即搜索</view>
+    <view class="qb-search-bar" bindtap="onQuickSearch">
+      <text class="qb-search-placeholder">关键字/位置/品牌</text>
+      <view class="qb-search-btn">查 询</view>
     </view>
   </view>
 
-  <!-- Banner轮播 -->
-  <view class="banner-section" wx:if="{{banners.length}}">
-    <swiper class="banner-swiper" autoplay circular indicator-dots indicator-color="rgba(255,255,255,0.4)" indicator-active-color="#fff">
+  <!-- Banner -->
+  <view class="banner-wrap" wx:if="{{banners.length}}">
+    <swiper class="banner-swiper" autoplay circular indicator-dots indicator-color="rgba(0,0,0,0.2)" indicator-active-color="#C81D2B">
       <swiper-item wx:for="{{banners}}" wx:key="_id">
         <image class="banner-img" src="{{item.imageUrl}}" mode="aspectFill" bindtap="onBannerTap" data-url="{{item.linkUrl}}"/>
       </swiper-item>
@@ -54,7 +44,7 @@
   <view class="category-section">
     <view class="category-grid">
       <view class="category-item" wx:for="{{categories}}" wx:key="name" bindtap="onCategoryTap" data-page="{{item.page}}" data-tab="{{item.tab}}">
-        <view class="category-icon-wrap">
+        <view class="category-icon-box">
           <image class="category-icon" src="{{item.icon}}" mode="aspectFit"/>
         </view>
         <text class="category-name">{{item.name}}</text>
@@ -62,27 +52,18 @@
     </view>
   </view>
 
-  <!-- 推荐酒店民宿 -->
+  <!-- 推荐酒店 -->
   <view class="section" wx:if="{{recommendHotels.length}}">
     <view class="section-header">
-      <view>
-        <text class="section-title">精选酒店民宿</text>
-        <text class="section-subtitle">甄选品质好宿</text>
-      </view>
-      <text class="section-more" bindtap="onCategoryTap" data-page="/pages/hotel/hotel">更多 ›</text>
+      <text class="section-title">精选酒店民宿</text>
+      <text class="section-more" bindtap="onCategoryTap" data-page="/pages/hotel/hotel">查看全部</text>
     </view>
     <scroll-view scroll-x class="scroll-h" enhanced show-scrollbar="{{false}}">
       <view class="hotel-card" wx:for="{{recommendHotels}}" wx:key="_id" bindtap="onHotelTap" data-id="{{item._id}}">
-        <view class="hotel-img-wrap">
-          <image class="hotel-img" src="{{item.coverImage}}" mode="aspectFill"/>
-          <view class="hotel-score-float" wx:if="{{item.score}}">
-            <text>{{item.score}}</text>
-            <text class="score-label-sm">分</text>
-          </view>
-        </view>
+        <image class="hotel-img" src="{{item.coverImage}}" mode="aspectFill"/>
         <view class="hotel-info">
           <text class="hotel-name ellipsis">{{item.name}}</text>
-          <view class="hotel-tags">
+          <view class="hotel-tags-row">
             <text class="tag" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this">{{tag}}</text>
           </view>
           <view class="flex-between">
@@ -97,17 +78,12 @@
   <!-- 推荐美食 -->
   <view class="section" wx:if="{{recommendFoods.length}}">
     <view class="section-header">
-      <view>
-        <text class="section-title">周边美食</text>
-        <text class="section-subtitle">地道丽江味道</text>
-      </view>
-      <text class="section-more" bindtap="onCategoryTap" data-page="/pages/food/food">更多 ›</text>
+      <text class="section-title">周边美食</text>
+      <text class="section-more" bindtap="onCategoryTap" data-page="/pages/food/food">查看全部</text>
     </view>
     <view class="food-list">
       <view class="food-card" wx:for="{{recommendFoods}}" wx:key="_id" bindtap="onFoodTap" data-id="{{item._id}}">
-        <view class="food-img-wrap">
-          <image class="food-img" src="{{item.coverImage}}" mode="aspectFill"/>
-        </view>
+        <image class="food-img" src="{{item.coverImage}}" mode="aspectFill"/>
         <view class="food-info">
           <text class="food-name">{{item.name}}</text>
           <text class="food-desc ellipsis">{{item.description}}</text>
@@ -120,30 +96,22 @@
     </view>
   </view>
 
-  <!-- 特产小零食（可送到房间） -->
+  <!-- 特产零食 -->
   <view class="section" wx:if="{{recommendProducts.length}}">
     <view class="section-header">
-      <view>
-        <text class="section-title">特产零食 · 送到房间</text>
-        <text class="section-subtitle">住酒店也能逛市集</text>
-      </view>
+      <text class="section-title">特产零食 · 送到房间</text>
     </view>
     <scroll-view scroll-x class="scroll-h" enhanced show-scrollbar="{{false}}">
       <view class="product-card" wx:for="{{recommendProducts}}" wx:key="_id" bindtap="onProductTap" data-id="{{item._id}}">
-        <view class="product-img-wrap">
-          <image class="product-img" src="{{item.coverImage}}" mode="aspectFill"/>
-        </view>
-        <view class="product-info">
-          <text class="product-name ellipsis">{{item.name}}</text>
-          <view class="flex-between">
-            <text class="price">{{item.price}}</text>
-            <text class="product-sales">已售{{item.sales || 0}}</text>
-          </view>
+        <image class="product-img" src="{{item.coverImage}}" mode="aspectFill"/>
+        <text class="product-name ellipsis">{{item.name}}</text>
+        <view class="flex-between">
+          <text class="price">{{item.price}}</text>
+          <text class="product-sales">已售{{item.sales || 0}}</text>
         </view>
       </view>
     </scroll-view>
   </view>
 
-  <!-- 底部留白 -->
   <view class="bottom-spacer"></view>
 </view>

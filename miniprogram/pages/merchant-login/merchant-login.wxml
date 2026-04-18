@@ -59,7 +59,7 @@
     </view>
 
     <view class="form-agreement">
-      <checkbox checked="{{agreed}}" bindchange="toggleAgreement" color="#C8A96E"/>
+      <checkbox checked="{{agreed}}" bindchange="toggleAgreement" color="#C81D2B"/>
       <text>我已阅读并同意《商户服务协议》</text>
     </view>
 

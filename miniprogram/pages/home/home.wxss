@@ -1,90 +1,42 @@
-/* ===== 整体 ===== */
+/* ===== 首页 - 亚朵风格 ===== */
 .home-page {
-  background: var(--bg);
+  background: #F7F7F7;
   min-height: 100vh;
-  padding-bottom: 40rpx;
 }
 
-/* ===== 顶部头区 ===== */
+/* ===== 顶部 ===== */
 .home-header {
-  background: linear-gradient(160deg, #4A3728 0%, #6B5344 40%, #8B7355 100%);
-  padding: 24rpx 28rpx 60rpx;
-  position: relative;
-  overflow: hidden;
-}
-
-.header-bg {
-  position: absolute;
-  top: -100rpx;
-  right: -60rpx;
-  width: 300rpx;
-  height: 300rpx;
-  border-radius: 50%;
-  background: rgba(200,169,110,0.12);
+  background: #fff;
+  padding: 16rpx 24rpx;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .location-bar {
   display: flex;
   align-items: center;
-  color: rgba(255,255,255,0.9);
-  font-size: 26rpx;
-  margin-bottom: 12rpx;
-  position: relative;
-  z-index: 1;
+  padding: 8rpx 0;
 }
-.location-icon { margin-right: 8rpx; font-size: 24rpx; }
-.location-text { max-width: 300rpx; }
-.location-arrow { margin-left: 8rpx; font-size: 18rpx; opacity: 0.6; }
-
-.header-tagline {
-  color: rgba(200,169,110,0.9);
-  font-size: 24rpx;
-  letter-spacing: 4rpx;
-  margin-bottom: 20rpx;
-  position: relative;
-  z-index: 1;
+.location-text {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1A1A1A;
+  max-width: 300rpx;
+}
+.location-arrow {
+  font-size: 20rpx;
+  color: #999;
+  margin-left: 8rpx;
 }
 
-.search-wrap {
-  display: flex;
-  align-items: center;
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
-  border-radius: 40rpx;
-  padding: 0 12rpx 0 24rpx;
-  border: 1rpx solid rgba(255,255,255,0.15);
-  position: relative;
-  z-index: 1;
-}
-.search-input {
-  flex: 1;
-  height: 76rpx;
-  font-size: 28rpx;
-  color: #fff;
-}
-.search-input::placeholder {
-  color: rgba(255,255,255,0.5);
-}
-.search-btn {
-  background: rgba(200,169,110,0.9);
-  color: #fff;
-  border-radius: 32rpx;
-  padding: 12rpx 30rpx;
-  font-size: 26rpx;
-  font-weight: 500;
-  letter-spacing: 1rpx;
-}
-
-/* ===== 快速预订卡片 ===== */
-.quick-book-card {
-  background: var(--card);
-  margin: -30rpx 24rpx 0;
-  border-radius: 24rpx;
-  padding: 32rpx;
-  position: relative;
-  z-index: 50;
-  box-shadow: 0 12rpx 40rpx rgba(74,55,40,0.1);
-  border: 1rpx solid rgba(200,169,110,0.15);
+/* ===== 快速预订 ===== */
+.quick-book {
+  background: #fff;
+  margin: 0 24rpx 20rpx;
+  border-radius: 16rpx;
+  padding: 28rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.04);
 }
 
 .qb-date-row {
@@ -93,345 +45,249 @@
   margin-bottom: 24rpx;
 }
 
-.quick-book-item {
+.qb-date-item {
   flex: 1;
-  background: #FAF7F2;
-  border-radius: 20rpx;
-  padding: 24rpx;
   text-align: center;
 }
 
-.qb-label {
+.qb-date-label {
   display: block;
-  font-size: 22rpx;
-  color: var(--text-light);
+  font-size: 24rpx;
+  color: #999;
   margin-bottom: 8rpx;
-  letter-spacing: 2rpx;
 }
 
-.qb-value {
+.qb-date-value {
   display: block;
   font-size: 32rpx;
   font-weight: 700;
-  color: var(--primary);
+  color: #1A1A1A;
 }
 
-.qb-day {
+.qb-date-day {
   display: block;
   font-size: 22rpx;
-  color: var(--accent-dark);
-  margin-top: 6rpx;
+  color: #999;
+  margin-top: 4rpx;
 }
 
-.qb-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20rpx;
+.qb-nights {
+  padding: 0 30rpx;
+  position: relative;
 }
-
-.qb-nights-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(200,169,110,0.1);
-  border-radius: 16rpx;
-  padding: 10rpx 16rpx;
-  border: 1rpx dashed rgba(200,169,110,0.3);
+.qb-nights::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: #E5E5E5;
+  transform: translateY(-50%);
 }
-
-.qb-nights-num {
-  font-size: 32rpx;
-  font-weight: 700;
-  color: var(--accent-dark);
-}
-
 .qb-nights-text {
-  font-size: 20rpx;
-  color: var(--text-light);
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  padding: 0 8rpx;
+  font-size: 24rpx;
+  color: #1A1A1A;
+  font-weight: 500;
 }
 
-.quick-book-search {
+.qb-search-bar {
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--primary), #5C4433);
-  border-radius: 44rpx;
-  padding: 0 10rpx 0 28rpx;
-  height: 84rpx;
+  background: #F5F5F5;
+  border-radius: 8rpx;
+  padding: 0 4rpx 0 24rpx;
+  height: 80rpx;
 }
 
-.qb-search-text {
+.qb-search-placeholder {
   flex: 1;
   font-size: 28rpx;
-  color: rgba(255,255,255,0.75);
-  letter-spacing: 1rpx;
+  color: #CCC;
 }
 
 .qb-search-btn {
-  background: var(--accent);
+  background: #C81D2B;
   color: #fff;
-  font-size: 26rpx;
+  font-size: 28rpx;
   font-weight: 600;
-  border-radius: 36rpx;
-  padding: 14rpx 32rpx;
-  letter-spacing: 1rpx;
+  border-radius: 6rpx;
+  padding: 16rpx 36rpx;
+  letter-spacing: 4rpx;
 }
 
 /* ===== Banner ===== */
-.banner-section {
-  margin: 24rpx 24rpx 0;
+.banner-wrap {
+  margin: 0 24rpx 20rpx;
 }
 .banner-swiper {
   height: 300rpx;
-  border-radius: 24rpx;
+  border-radius: 16rpx;
   overflow: hidden;
 }
 .banner-img {
   width: 100%;
   height: 100%;
-  border-radius: 24rpx;
 }
 
 /* ===== 分类 ===== */
 .category-section {
-  margin: 24rpx 24rpx 0;
-  background: var(--card);
-  border-radius: 24rpx;
-  box-shadow: 0 4rpx 20rpx rgba(74,55,40,0.05);
-  border: 1rpx solid rgba(200,169,110,0.1);
-  overflow: hidden;
+  background: #fff;
+  margin: 0 24rpx 20rpx;
+  border-radius: 16rpx;
+  padding: 24rpx 0 12rpx;
 }
-
 .category-grid {
   display: flex;
   flex-wrap: wrap;
-  padding: 24rpx 0 12rpx;
 }
-
 .category-item {
   width: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16rpx 0;
+  padding: 12rpx 0;
 }
-
-.category-icon-wrap {
-  width: 90rpx;
-  height: 90rpx;
-  background: rgba(200,169,110,0.08);
-  border-radius: 24rpx;
+.category-icon-box {
+  width: 80rpx;
+  height: 80rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 12rpx;
 }
-
 .category-icon {
-  width: 52rpx;
-  height: 52rpx;
+  width: 56rpx;
+  height: 56rpx;
 }
-
 .category-name {
   font-size: 24rpx;
-  color: var(--text);
-  font-weight: 500;
+  color: #333;
 }
 
-/* ===== 区块头部 ===== */
+/* ===== 区块 ===== */
 .section {
-  margin-top: 32rpx;
+  margin-bottom: 20rpx;
 }
-
 .section-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 28rpx;
+  align-items: center;
+  padding: 24rpx 28rpx 16rpx;
+  background: #F7F7F7;
 }
-
 .section-title {
-  font-size: 36rpx;
+  font-size: 32rpx;
   font-weight: 700;
-  color: var(--primary);
-  display: block;
-  letter-spacing: 1rpx;
+  color: #1A1A1A;
 }
-
-.section-subtitle {
-  font-size: 22rpx;
-  color: var(--text-light);
-  display: block;
-  margin-top: 4rpx;
-  letter-spacing: 2rpx;
-}
-
 .section-more {
   font-size: 24rpx;
-  color: var(--accent-dark);
-  font-weight: 500;
+  color: #999;
 }
 
-/* ===== 酒店卡片 ===== */
+/* ===== 酒店横滑 ===== */
 .scroll-h {
   white-space: nowrap;
-  padding: 20rpx 24rpx;
+  padding: 0 24rpx;
 }
-
 .hotel-card {
   display: inline-block;
-  width: 340rpx;
+  width: 320rpx;
   margin-right: 20rpx;
-  background: var(--card);
-  border-radius: 20rpx;
+  background: #fff;
+  border-radius: 16rpx;
   overflow: hidden;
-  box-shadow: 0 6rpx 24rpx rgba(74,55,40,0.08);
-  border: 1rpx solid rgba(200,169,110,0.1);
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.06);
 }
-
-.hotel-img-wrap {
-  position: relative;
-}
-
 .hotel-img {
-  width: 340rpx;
-  height: 230rpx;
+  width: 320rpx;
+  height: 210rpx;
 }
-
-.hotel-score-float {
-  position: absolute;
-  top: 16rpx;
-  right: 16rpx;
-  background: rgba(74,55,40,0.85);
-  backdrop-filter: blur(6px);
-  color: var(--accent);
-  font-size: 26rpx;
-  font-weight: 700;
-  padding: 6rpx 14rpx;
-  border-radius: 12rpx;
-}
-
-.score-label-sm {
-  font-size: 18rpx;
-  font-weight: 500;
-  margin-left: 2rpx;
-}
-
 .hotel-info {
-  padding: 20rpx;
+  padding: 16rpx;
 }
-
 .hotel-name {
   font-size: 28rpx;
   font-weight: 600;
   display: block;
-  color: var(--text);
   margin-bottom: 8rpx;
 }
-
-.hotel-tags {
-  margin: 8rpx 0;
-  min-height: 36rpx;
+.hotel-tags-row {
+  margin-bottom: 8rpx;
+  min-height: 32rpx;
 }
-
 .hotel-distance {
   font-size: 22rpx;
-  color: var(--text-light);
+  color: #999;
 }
 
-/* ===== 美食卡片 ===== */
-.food-list { padding: 0 24rpx; }
-
+/* ===== 美食列表 ===== */
+.food-list {
+  padding: 0 24rpx;
+}
 .food-card {
   display: flex;
-  background: var(--card);
-  border-radius: 20rpx;
+  background: #fff;
+  border-radius: 16rpx;
   overflow: hidden;
-  margin-bottom: 20rpx;
-  box-shadow: 0 4rpx 16rpx rgba(74,55,40,0.06);
-  border: 1rpx solid rgba(200,169,110,0.08);
+  margin-bottom: 16rpx;
+  box-shadow: 0 1rpx 8rpx rgba(0,0,0,0.04);
 }
-
-.food-img-wrap {
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
 .food-img {
-  width: 210rpx;
-  height: 190rpx;
-  border-radius: 20rpx 0 0 20rpx;
+  width: 200rpx;
+  height: 180rpx;
+  flex-shrink: 0;
 }
-
 .food-info {
   flex: 1;
-  padding: 20rpx 24rpx;
+  padding: 16rpx 20rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 .food-name {
   font-size: 30rpx;
   font-weight: 600;
-  color: var(--text);
 }
-
 .food-desc {
   font-size: 24rpx;
-  color: var(--text-secondary);
-  margin: 8rpx 0;
+  color: #999;
 }
-
 .food-distance {
   font-size: 22rpx;
-  color: var(--text-light);
+  color: #999;
 }
 
-/* ===== 特产卡片 ===== */
+/* ===== 特产横滑 ===== */
 .product-card {
   display: inline-block;
-  width: 240rpx;
-  margin-right: 20rpx;
-  background: var(--card);
-  border-radius: 20rpx;
+  width: 220rpx;
+  margin-right: 16rpx;
+  background: #fff;
+  border-radius: 16rpx;
   overflow: hidden;
-  box-shadow: 0 4rpx 16rpx rgba(74,55,40,0.06);
-  border: 1rpx solid rgba(200,169,110,0.08);
+  box-shadow: 0 1rpx 8rpx rgba(0,0,0,0.04);
 }
-
-.product-img-wrap {
-  overflow: hidden;
-}
-
 .product-img {
-  width: 240rpx;
-  height: 240rpx;
-  transition: transform 0.3s;
+  width: 220rpx;
+  height: 220rpx;
 }
-
-.product-card:active .product-img {
-  transform: scale(1.05);
-}
-
-.product-info {
-  padding: 16rpx;
-}
-
 .product-name {
-  font-size: 26rpx;
-  font-weight: 500;
+  font-size: 24rpx;
+  padding: 12rpx 12rpx 0;
   display: block;
-  color: var(--text);
-  margin-bottom: 8rpx;
 }
-
 .product-sales {
-  font-size: 22rpx;
-  color: var(--text-light);
+  font-size: 20rpx;
+  color: #999;
+  padding-right: 12rpx;
 }
 
-/* ===== 底部留白 ===== */
 .bottom-spacer {
-  height: 40rpx;
+  height: 30rpx;
 }

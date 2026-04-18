@@ -30,16 +30,16 @@
     "pages/merchant-profile/merchant-profile"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#4A3728",
-    "navigationBarTitleText": "丽江 · 慢生活",
-    "navigationBarTextStyle": "white"
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "本地生活",
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#B5ADA3",
-    "selectedColor": "#4A3728",
-    "backgroundColor": "#FFFCF7",
-    "borderStyle": "white",
+    "color": "#999999",
+    "selectedColor": "#C81D2B",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/home/home",

@@ -1,283 +1,166 @@
 .mine-page {
-  background: var(--bg);
+  background: #F7F7F7;
   min-height: 100vh;
   padding-bottom: 60rpx;
 }
 
-/* ====== 顶部头像区 - 亚朵暖木调 ====== */
+/* ===== 顶部 ===== */
 .mine-header {
-  background: linear-gradient(160deg, #4A3728 0%, #6B5344 35%, #8B7355 70%, var(--accent-dark) 100%);
-  padding: 60rpx 36rpx 80rpx;
-  position: relative;
-  overflow: hidden;
+  background: #fff;
+  padding: 40rpx 32rpx 60rpx;
 }
-
-.header-bg-decor {
-  position: absolute;
-  bottom: -10rpx;
-  left: 0;
-  right: 0;
-  height: 40rpx;
-  background: var(--bg);
-  border-radius: 40rpx 40rpx 0 0;
-}
-
 .mine-header-content {
   display: flex;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
-
-.avatar-wrap {
-  position: relative;
-  margin-right: 28rpx;
-}
-
 .mine-avatar {
-  width: 130rpx;
-  height: 130rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
-  border: 6rpx solid rgba(200,169,110,0.5);
+  margin-right: 24rpx;
+  background: #F5F5F5;
 }
-
-.avatar-ring {
-  position: absolute;
-  top: -8rpx;
-  left: -8rpx;
-  right: -8rpx;
-  bottom: -8rpx;
-  border-radius: 50%;
-  border: 2rpx solid rgba(200,169,110,0.25);
-}
-
 .mine-name {
-  color: #fff;
-  font-size: 38rpx;
+  color: #1A1A1A;
+  font-size: 36rpx;
   font-weight: 700;
   display: block;
-  text-shadow: 0 2rpx 8rpx rgba(0,0,0,0.15);
 }
-
 .mine-slogan {
-  color: rgba(200,169,110,0.85);
+  color: #999;
   font-size: 24rpx;
   margin-top: 8rpx;
   display: block;
-  letter-spacing: 3rpx;
 }
 
-/* ====== 会员徽章 ====== */
-.member-badge {
-  background: rgba(200,169,110,0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 18rpx;
-  padding: 14rpx 22rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: auto;
-  border: 1rpx solid rgba(200,169,110,0.25);
-}
-
-.member-level {
-  color: var(--accent);
-  font-size: 24rpx;
-  font-weight: 700;
-}
-
-.member-points {
-  color: rgba(200,169,110,0.7);
-  font-size: 20rpx;
-  margin-top: 4rpx;
-}
-
-/* ====== 商户入口 ====== */
+/* ===== 商户入口 ===== */
 .merchant-entry {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: -30rpx 28rpx 0;
-  padding: 28rpx 28rpx;
-  background: linear-gradient(135deg, var(--primary), #5C4433);
-  border-radius: 22rpx;
+  margin: -20rpx 24rpx 0;
+  padding: 24rpx 28rpx;
+  background: #1A1A1A;
+  border-radius: 16rpx;
   position: relative;
   z-index: 2;
-  box-shadow: 0 10rpx 30rpx rgba(74,55,40,0.25);
 }
-
 .merchant-entry-left {
   display: flex;
   align-items: center;
 }
-
-.merchant-icon-wrap {
-  width: 74rpx;
-  height: 74rpx;
-  background: rgba(200,169,110,0.15);
-  border-radius: 20rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20rpx;
-}
-
 .merchant-entry-icon {
   font-size: 36rpx;
+  margin-right: 16rpx;
 }
-
 .merchant-entry-title {
   color: #fff;
-  font-size: 30rpx;
+  font-size: 28rpx;
   font-weight: 600;
   display: block;
-  letter-spacing: 1rpx;
 }
-
 .merchant-entry-desc {
-  color: rgba(200,169,110,0.65);
+  color: rgba(255,255,255,0.5);
   font-size: 22rpx;
   margin-top: 4rpx;
-  letter-spacing: 1rpx;
 }
-
 .merchant-entry .menu-arrow {
-  color: rgba(200,169,110,0.35);
+  color: rgba(255,255,255,0.3);
   font-size: 36rpx;
 }
 
-/* ====== 区块通用 ====== */
+/* ===== 区块 ===== */
 .mine-section {
-  margin: 24rpx 28rpx;
-  background: var(--card);
-  border-radius: 22rpx;
-  padding: 28rpx 24rpx;
-  box-shadow: 0 4rpx 20rpx rgba(74,55,40,0.05);
-  border: 1rpx solid rgba(200,169,110,0.08);
+  margin: 24rpx 24rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 1rpx 8rpx rgba(0,0,0,0.04);
 }
-
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24rpx;
+  margin-bottom: 20rpx;
 }
-
 .section-title {
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: 700;
-  color: var(--primary);
-  letter-spacing: 1rpx;
+  color: #1A1A1A;
 }
-
 .section-more {
   font-size: 24rpx;
-  color: var(--text-light);
+  color: #999;
 }
 
-/* ====== 订单状态网格 ====== */
+/* ===== 订单状态 ===== */
 .order-status-grid {
   display: flex;
-  justify-content: around;
+  justify-content: space-around;
   padding: 12rpx 0;
 }
-
 .order-status-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
 }
-
 .status-icon-wrap {
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 22rpx;
+  width: 72rpx;
+  height: 72rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 12rpx;
 }
-
-.status-icon-wrap.pending { background: rgba(200,169,110,0.1); }
-.status-icon-wrap.paid { background: rgba(91,140,106,0.1); }
-.status-icon-wrap.completed { background: rgba(74,55,40,0.08); }
-.status-icon-wrap.cancelled { background: rgba(192,80,64,0.08); }
-
 .status-icon {
-  width: 40rpx;
-  height: 40rpx;
+  width: 44rpx;
+  height: 44rpx;
 }
-
 .status-name {
   font-size: 22rpx;
-  color: var(--text-secondary);
-  letter-spacing: 1rpx;
+  color: #666;
 }
 
-/* ====== 菜单列表 ====== */
+/* ===== 菜单 ===== */
 .menu-section {
   padding: 8rpx 24rpx;
 }
-
 .menu-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 28rpx 0;
-  border-bottom: 1rpx solid var(--border);
+  border-bottom: 1rpx solid #F0F0F0;
 }
-
 .menu-item.no-border {
   border-bottom: none;
 }
-
 .menu-item-left {
   display: flex;
   align-items: center;
 }
-
-.menu-icon-wrap {
-  width: 60rpx;
-  height: 60rpx;
-  border-radius: 16rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.menu-icon-text {
+  font-size: 36rpx;
   margin-right: 20rpx;
+  width: 44rpx;
+  text-align: center;
 }
-
-.menu-icon-wrap.addr { background: rgba(74,55,40,0.08); }
-.menu-icon-wrap.order { background: rgba(200,169,110,0.1); }
-.menu-icon-wrap.cart { background: rgba(91,140,106,0.1); }
-.menu-icon-wrap.service { background: rgba(74,55,40,0.08); }
-.menu-icon-wrap.about { background: rgba(200,169,110,0.08); }
-
-.menu-icon {
-  width: 34rpx;
-  height: 34rpx;
-}
-
 .menu-text {
   font-size: 28rpx;
-  color: var(--text);
-  font-weight: 500;
-  letter-spacing: 1rpx;
+  color: #1A1A1A;
 }
-
 .menu-arrow {
-  color: var(--text-light);
+  color: #D9D9D9;
   font-size: 32rpx;
 }
 
-/* ====== 底部装饰 ====== */
+/* ===== 底部 ===== */
 .footer-decor {
   text-align: center;
-  padding: 50rpx 0;
+  padding: 40rpx 0;
 }
-
 .footer-text {
   font-size: 22rpx;
-  color: var(--text-light);
-  letter-spacing: 6rpx;
+  color: #CCC;
+  letter-spacing: 2rpx;
 }

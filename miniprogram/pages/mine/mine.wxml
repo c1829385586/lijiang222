@@ -1,20 +1,12 @@
 <!--pages/mine/mine.wxml-->
 <view class="mine-page">
-  <!-- 顶部头像区 - 丽江度假风 -->
+  <!-- 顶部头像区 -->
   <view class="mine-header">
-    <view class="header-bg-decor"></view>
     <view class="mine-header-content">
-      <view class="avatar-wrap">
-        <image class="mine-avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"/>
-        <view class="avatar-ring"></view>
-      </view>
+      <image class="mine-avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"/>
       <view class="mine-user">
         <text class="mine-name">{{userInfo.nickName || '点击登录'}}</text>
-        <text class="mine-slogan">丽江 · 慢生活</text>
-      </view>
-      <view class="member-badge" bindtap="goMember">
-        <text class="member-level">{{memberLevel}}</text>
-        <text class="member-points">{{memberPoints}}积分</text>
+        <text class="mine-slogan">在丽江，遇见慢生活</text>
       </view>
     </view>
   </view>
@@ -22,9 +14,7 @@
   <!-- 商户入口 -->
   <view class="merchant-entry" bindtap="goMerchantCenter">
     <view class="merchant-entry-left">
-      <view class="merchant-icon-wrap">
-        <text class="merchant-entry-icon">🏪</text>
-      </view>
+      <text class="merchant-entry-icon">🏪</text>
       <view>
         <text class="merchant-entry-title">{{isMerchant ? '商户中心' : '我是商家'}}</text>
         <text class="merchant-entry-desc">{{isMerchant ? '管理店铺、商品和订单' : '入驻平台，开启生意'}}</text>
@@ -41,25 +31,25 @@
     </view>
     <view class="order-status-grid">
       <view class="order-status-item" bindtap="goOrders" data-status="pending">
-        <view class="status-icon-wrap pending">
+        <view class="status-icon-wrap">
           <image class="status-icon" src="/images/mine/pending.png" mode="aspectFit"/>
         </view>
         <text class="status-name">待支付</text>
       </view>
       <view class="order-status-item" bindtap="goOrders" data-status="paid">
-        <view class="status-icon-wrap paid">
+        <view class="status-icon-wrap">
           <image class="status-icon" src="/images/mine/paid.png" mode="aspectFit"/>
         </view>
         <text class="status-name">已支付</text>
       </view>
       <view class="order-status-item" bindtap="goOrders" data-status="completed">
-        <view class="status-icon-wrap completed">
+        <view class="status-icon-wrap">
           <image class="status-icon" src="/images/mine/completed.png" mode="aspectFit"/>
         </view>
         <text class="status-name">已完成</text>
       </view>
       <view class="order-status-item" bindtap="goOrders" data-status="cancelled">
-        <view class="status-icon-wrap cancelled">
+        <view class="status-icon-wrap">
           <image class="status-icon" src="/images/mine/cancelled.png" mode="aspectFit"/>
         </view>
         <text class="status-name">已取消</text>
@@ -71,62 +61,50 @@
   <view class="mine-section menu-section">
     <view class="menu-item" bindtap="goAddress">
       <view class="menu-item-left">
-        <view class="menu-icon-wrap addr">
-          <image class="menu-icon" src="/images/mine/address.png" mode="aspectFit"/>
-        </view>
+        <text class="menu-icon-text">📍</text>
         <text class="menu-text">收货地址</text>
       </view>
       <text class="menu-arrow">›</text>
     </view>
     <view class="menu-item" bindtap="goOrders" data-status="all">
       <view class="menu-item-left">
-        <view class="menu-icon-wrap order">
-          <image class="menu-icon" src="/images/mine/order.png" mode="aspectFit"/>
-        </view>
+        <text class="menu-icon-text">📋</text>
         <text class="menu-text">全部订单</text>
       </view>
       <text class="menu-arrow">›</text>
     </view>
     <view class="menu-item" bindtap="goCart">
       <view class="menu-item-left">
-        <view class="menu-icon-wrap cart">
-          <image class="menu-icon" src="/images/mine/cart.png" mode="aspectFit"/>
-        </view>
+        <text class="menu-icon-text">🛒</text>
         <text class="menu-text">购物车</text>
       </view>
       <text class="menu-arrow">›</text>
     </view>
     <view class="menu-item" bindtap="goMyReviews">
       <view class="menu-item-left">
-        <view class="menu-icon-wrap order">
-          <text style="font-size:36rpx">⭐</text>
-        </view>
+        <text class="menu-icon-text">⭐</text>
         <text class="menu-text">我的评价</text>
       </view>
       <text class="menu-arrow">›</text>
     </view>
     <view class="menu-item" bindtap="contactService">
       <view class="menu-item-left">
-        <view class="menu-icon-wrap service">
-          <image class="menu-icon" src="/images/mine/service.png" mode="aspectFit"/>
-        </view>
+        <text class="menu-icon-text">💬</text>
         <text class="menu-text">联系客服</text>
       </view>
       <text class="menu-arrow">›</text>
     </view>
     <view class="menu-item no-border" bindtap="goAbout">
       <view class="menu-item-left">
-        <view class="menu-icon-wrap about">
-          <image class="menu-icon" src="/images/mine/about.png" mode="aspectFit"/>
-        </view>
+        <text class="menu-icon-text">ℹ️</text>
         <text class="menu-text">关于我们</text>
       </view>
       <text class="menu-arrow">›</text>
     </view>
   </view>
 
-  <!-- 底部装饰 -->
+  <!-- 底部 -->
   <view class="footer-decor">
-    <text class="footer-text">—  丽江 · 慢生活  —</text>
+    <text class="footer-text">— 丽江慢生活 · 本地好去处 —</text>
   </view>
 </view>

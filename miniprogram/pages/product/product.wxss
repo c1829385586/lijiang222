@@ -5,4 +5,4 @@
 .product-name { font-size: 28rpx; font-weight: bold; display: block; }
 .product-original { font-size: 22rpx; color: #999; text-decoration: line-through; }
 .product-sales { font-size: 22rpx; color: #999; }
-.product-deliver { font-size: 20rpx; color: var(--accent-dark); background: rgba(200,169,110,0.12); padding: 2rpx 8rpx; border-radius: 6rpx; }
+.product-deliver { font-size: 20rpx; color: #C81D2B; background: #F5F5F5; padding: 2rpx 8rpx; border-radius: 6rpx; }

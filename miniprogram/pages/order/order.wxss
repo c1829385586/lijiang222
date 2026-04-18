@@ -11,21 +11,21 @@
 .subscribe-title { font-size: 28rpx; font-weight: bold; color: #E8885A; display: block; }
 .subscribe-desc { font-size: 22rpx; color: #999; }
 .subscribe-btn {
-  background: var(--accent-dark); color: #fff; font-size: 24rpx; padding: 10rpx 24rpx;
+  background: #C81D2B; color: #fff; font-size: 24rpx; padding: 10rpx 24rpx;
   border-radius: 24rpx; flex-shrink: 0;
 }
 .subscribe-close { font-size: 28rpx; color: #ccc; margin-left: 16rpx; flex-shrink: 0; }
 
 .order-tabs { white-space: nowrap; background: #fff; padding: 0 24rpx; border-bottom: 1rpx solid #eee; position: sticky; top: 0; z-index: 10; }
 .tab-item { display: inline-block; padding: 20rpx 24rpx; font-size: 28rpx; color: #666; position: relative; }
-.tab-item.active { color: var(--accent-dark); font-weight: bold; }
-.tab-item.active::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40rpx; height: 4rpx; background: var(--accent-dark); border-radius: 2rpx; }
+.tab-item.active { color: #C81D2B; font-weight: bold; }
+.tab-item.active::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40rpx; height: 4rpx; background: #C81D2B; border-radius: 2rpx; }
 .badge { position: absolute; top: 4rpx; right: 0; background: #FF3B30; color: #fff; font-size: 18rpx; min-width: 28rpx; height: 28rpx; border-radius: 14rpx; display: flex; align-items: center; justify-content: center; padding: 0 6rpx; }
 .order-card { margin-top: 16rpx !important; }
 .order-header { margin-bottom: 12rpx; }
 .order-store { font-size: 28rpx; font-weight: bold; }
 .order-status { font-size: 24rpx; }
-.order-status.pending { color: var(--accent-dark); }
+.order-status.pending { color: #C81D2B; }
 .order-status.paid { color: #4CD964; }
 .order-status.completed { color: #999; }
 .order-status.cancelled { color: #ccc; }
@@ -37,11 +37,11 @@
 .order-time { font-size: 22rpx; color: #999; }
 .order-actions { display: flex; justify-content: flex-end; margin-top: 16rpx; padding-top: 16rpx; border-top: 1rpx solid #f0f0f0; }
 .action-btn { padding: 10rpx 28rpx; border: 1rpx solid #ddd; border-radius: 24rpx; font-size: 24rpx; margin-left: 16rpx; }
-.action-btn.primary { background: var(--accent-dark); color: #fff; border-color: var(--accent-dark); }
+.action-btn.primary { background: #C81D2B; color: #fff; border-color: #C81D2B; }
 .action-btn.danger { color: #FF3B30; border-color: #FF3B30; }
 .order-type-tag { font-size: 20rpx; padding: 4rpx 10rpx; border-radius: 6rpx; margin-right: 12rpx; }
 .order-type-tag.hotel { background: #E8F4FD; color: #007AFF; }
-.order-type-tag.food { background: rgba(200,169,110,0.12); color: var(--accent-dark); }
+.order-type-tag.food { background: #F5F5F5; color: #C81D2B; }
 .order-type-tag.product { background: #F0F0FF; color: #5856D6; }
 .order-type-tag.travel { background: #E8F8E8; color: #4CD964; }
 .order-detail { font-size: 24rpx; color: #666; }
